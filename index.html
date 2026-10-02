@@ -89,7 +89,7 @@ a{color:inherit}
 .menu{display:flex;gap:1.5rem;font-weight:500;font-size:.95rem}
 .menu a{text-decoration:none;padding:.25rem 0;border-bottom:2px solid transparent}
 .menu a:hover{border-bottom-color:var(--ouro)}
-@media (max-width:700px){.menu{display:none}}
+@media (max-width:700px){.topo .conteiner{flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem}.menu{width:100%;justify-content:space-between;gap:.5rem;font-size:.85rem;white-space:nowrap}}
 
 /* Abertura */
 .abertura{padding:clamp(2.5rem,7vw,5rem) 0 clamp(2rem,5vw,3.5rem)}
@@ -102,17 +102,21 @@ a{color:inherit}
 @media (min-width:820px){.abertura-grade{grid-template-columns:minmax(0,7fr) minmax(0,4fr)}.logo-destaque{justify-self:end}}
 
 /* Blocos de produto */
+html{scroll-behavior:smooth}
+.bloco{scroll-margin-top:1.5rem}
+.foto-link{display:block}
+.foto-link:hover img{opacity:.92}
 .produtos{display:grid;gap:1.5rem;padding-bottom:clamp(3rem,7vw,5rem)}
 .bloco{display:grid;grid-template-columns:minmax(0,1fr);background:var(--tinta);color:var(--nude);border-radius:1.25rem;overflow:hidden}
 @media (min-width:820px){
   .bloco{grid-template-columns:minmax(0,11fr) minmax(0,9fr)}
-  .bloco:nth-child(even) .foto{order:2}
+  .bloco:nth-child(even) .foto-link{order:2}
 }
 .foto{aspect-ratio:16/10;background:#2a241e;position:relative}
 .foto img{width:100%;height:100%;object-fit:cover}
 .foto-clara{background:#F5E9DC}
 @media (min-width:820px){
-  .foto{aspect-ratio:auto;min-height:21rem}
+  .foto{aspect-ratio:auto;min-height:21rem;height:100%}
   .foto img{position:absolute;inset:0}
 }
 .texto{padding:clamp(1.5rem,4vw,2.75rem);display:flex;flex-direction:column;justify-content:center}
@@ -138,7 +142,7 @@ a{color:inherit}
 .rodape a:hover{color:var(--ouro-claro)}
 .rodape strong{color:var(--ouro-claro);font-weight:800}
 
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -151,9 +155,9 @@ a{color:inherit}
       <strong>E Sousa</strong><span>Serviços Digitais</span>
     </a>
     <nav class="menu" aria-label="Principal">
-      <a href="/agenteisa">Isa</a>
-      <a href="/agentedetopobelaisa">Belaisa</a>
-      <a href="/arte-e-papel">Arte &amp; Papel</a>
+      <a href="#secretaria-virtual">Secretária virtual</a>
+      <a href="#topo-de-bolo">Topo de bolo</a>
+      <a href="#produtos-fisicos">Produtos físicos</a>
     </nav>
   </div>
 </header>
@@ -173,51 +177,57 @@ a{color:inherit}
   </section>
 
   <div class="conteiner produtos">
-    <article class="bloco">
+    <article class="bloco" id="secretaria-virtual">
+      <a class="foto-link" href="/agenteisa" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
       <div class="foto">
         <picture>
           <source srcset="/img/isa.webp" type="image/webp">
           <img src="/img/isa.jpg" width="1586" height="992" alt="Isa, a secretária digital da E Sousa, respondendo clientes no WhatsApp e marcando horários na agenda" loading="lazy">
         </picture>
       </div>
+      </a>
       <div class="texto">
         <h2>Isa</h2>
         <p class="papel">Secretária digital no WhatsApp</p>
         <p>Responde suas clientes no seu próprio WhatsApp Business, informa preços e duração dos serviços, mostra seus horários livres e marca direto na sua agenda. De dia, de madrugada e no domingo.</p>
         <p class="para-quem">Para trancistas, manicures, lash designers, designers de sobrancelha, barbeiros e esteticistas.</p>
-        <a class="botao" href="/agenteisa">Conhecer a Isa</a>
+        <a class="botao" href="/agenteisa" target="_blank" rel="noopener">Conhecer a Isa</a>
       </div>
     </article>
 
-    <article class="bloco">
+    <article class="bloco" id="topo-de-bolo">
+      <a class="foto-link" href="/agentedetopobelaisa" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
       <div class="foto">
         <picture>
           <source srcset="/img/belaisa.webp" type="image/webp">
           <img src="/img/belaisa.jpg" width="1585" height="992" alt="Belaisa, a designer de topo de bolo por IA, criando artes de topo de bolo personalizadas" loading="lazy">
         </picture>
       </div>
+      </a>
       <div class="texto">
         <h2>Belaisa</h2>
         <p class="papel">Designer de topo de bolo</p>
         <p>Você descreve o tema que a cliente pediu e a Belaisa entrega a arte do topo de bolo em PNG, pronta pra imprimir. Topo 3D, simples, com camada real ou fake e acabamento laminado.</p>
         <p class="para-quem">Para papelarias e ateliês que vendem topo de bolo personalizado.</p>
-        <a class="botao" href="/agentedetopobelaisa">Conhecer a Belaisa</a>
+        <a class="botao" href="/agentedetopobelaisa" target="_blank" rel="noopener">Conhecer a Belaisa</a>
       </div>
     </article>
 
-    <article class="bloco">
+    <article class="bloco" id="produtos-fisicos">
+      <a class="foto-link" href="/arte-e-papel" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
       <div class="foto foto-clara">
         <picture>
           <source srcset="/img/arte-e-papel.webp" type="image/webp">
           <img src="/img/arte-e-papel.jpg" width="1586" height="992" alt="Logo da E Sousa Arte & Papel, papelaria infantil em São João de Meriti, RJ" loading="lazy">
         </picture>
       </div>
+      </a>
       <div class="texto">
         <h2>Arte &amp; Papel</h2>
         <p class="papel">Produtos físicos de papelaria infantil</p>
         <p>Aqui não é agente de IA: são produtos físicos, de papel, pra pegar na mão. Folhinhas e cadernos de colorir, kits temáticos e jogos educativos que chegam na sua casa pela Shopee ou pelo TikTok Shop, ou que você retira em mãos em São João de Meriti, RJ.</p>
         <p class="para-quem">Para famílias, escolas e quem procura um presente que diverte e ensina.</p>
-        <a class="botao" href="/arte-e-papel">Ver a loja</a>
+        <a class="botao" href="/arte-e-papel" target="_blank" rel="noopener">Ver a loja</a>
       </div>
     </article>
   </div>
@@ -238,9 +248,9 @@ a{color:inherit}
       <small>&copy; <span id="ano">2026</span> E Sousa Serviços Digitais</small>
     </div>
     <nav aria-label="Rodapé">
-      <a href="/agenteisa">Isa</a>
-      <a href="/agentedetopobelaisa">Belaisa</a>
-      <a href="/arte-e-papel">Arte &amp; Papel</a>
+      <a href="/agenteisa" target="_blank" rel="noopener">Isa</a>
+      <a href="/agentedetopobelaisa" target="_blank" rel="noopener">Belaisa</a>
+      <a href="/arte-e-papel" target="_blank" rel="noopener">Arte &amp; Papel</a>
       <a href="https://www.instagram.com/esousaservicosdigitais/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://wa.me/5521983920008?text=Ol%C3%A1%21%20Estava%20no%20site%20da%20E%20Sousa%20%28esousa.com.br%29%20e%20quero%20saber%20qual%20a%20melhor%20solu%C3%A7%C3%A3o%20pra%20mim.%20Posso%20te%20explicar%20o%20que%20eu%20preciso%3F" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
