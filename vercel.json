@@ -1,0 +1,26 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/agenteisa", "destination": "https://agente-isa.vercel.app/" },
+    { "source": "/agenteisa/:path*", "destination": "https://agente-isa.vercel.app/:path*" },
+
+    { "source": "/agentedetopobelaisa", "destination": "https://belaisa.vercel.app/" },
+    { "source": "/agentedetopobelaisa/:path*", "destination": "https://belaisa.vercel.app/:path*" },
+    { "source": "/hero-banner.png", "destination": "https://belaisa.vercel.app/hero-banner.png" },
+
+    { "source": "/links", "destination": "https://LINKS-PROJETO.vercel.app/" },
+    { "source": "/links/:path*", "destination": "https://LINKS-PROJETO.vercel.app/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/links",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/links/:path*",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    }
+  ]
+}
