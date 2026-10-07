@@ -22,6 +22,14 @@
     {
       "source": "/hero-banner.png",
       "destination": "https://belaisa.vercel.app/hero-banner.png"
+    },
+    {
+      "source": "/isapainel",
+      "destination": "https://salao.esousa.com.br/isapainel"
+    },
+    {
+      "source": "/isapainel/:path*",
+      "destination": "https://salao.esousa.com.br/isapainel/:path*"
     }
   ],
   "headers": [
@@ -36,6 +44,24 @@
     },
     {
       "source": "/bio/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/isapainel",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/isapainel/:path*",
       "headers": [
         {
           "key": "X-Robots-Tag",
